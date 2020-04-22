@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let content = UNMutableNotificationContent() // Содержимое уведомления
         let categoryIdentifire = "Delete Notification Type"
         
-        content.title = notificationType
+        content.title = "Daily Quotes 👩‍🎤"
         
         content.sound = UNNotificationSound.default
         content.badge = 1
@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         content.body = quotes[number]
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-        let identifier = "Daily Quotes 👩‍🎤"
+        let identifier = "Local Notification"
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
         notificationCenter.add(request) { (error) in
