@@ -86,8 +86,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         content.sound = UNNotificationSound.default
         content.badge = 1
         content.categoryIdentifier = categoryIdentifire
+    
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60 * 60, repeats: true)
         let identifier = "Local Notification"
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
