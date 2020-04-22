@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let notificationCenter = UNUserNotificationCenter.current()
+    
+    let quotes = ["Albemarle", "Brandywine", "Chesapeake"]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         notificationCenter.delegate = self
@@ -82,14 +84,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let categoryIdentifire = "Delete Notification Type"
         
         content.title = notificationType
-        content.body = "This is example how to create " + notificationType
+        
         content.sound = UNNotificationSound.default
         content.badge = 1
         content.categoryIdentifier = categoryIdentifire
-    
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60 * 60, repeats: true)
-        let identifier = "Local Notification"
+        let number = Int.random(in: 0 ... quotes.count)
+        content.body = quotes[number]
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        let identifier = "Daily Quotes 👩‍🎤"
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
         notificationCenter.add(request) { (error) in
