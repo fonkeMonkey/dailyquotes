@@ -15,7 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let notificationCenter = UNUserNotificationCenter.current()
     
-    let quotes = ["Albemarle", "Brandywine", "Chesapeake"]
+    //TODO put in file probably
+    let quotes = ["Character is action. Deep character is how a person behaves under stress.",
+                  "Keep away from people who try to belittle your ambitions. Small people always do that, but the really great make you feel that you, too, can become great.  - Mark Twain",
+                  "We know that 80 percent of life's most defining moments take place by age 35.",
+                  " When you have some cards, play them, but until then, you have to do what you have to do, and getting angry about how stupid the process is is only going to undercut your efforts (and I've been there; it isn't productive.)",
+                  "The opposite of courage in our society is not cowardice, it's conformity.",
+        "I’m very happily married and have been for many years. But I don’t think it’s for everyone, and it probably never was. People are just now coming to this realization, and because of this the social pressure to marry is on the decline. "
+    ]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         notificationCenter.delegate = self
