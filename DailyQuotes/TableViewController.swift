@@ -10,7 +10,8 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let notifications = ["Local Notification",
+    let notifications = ["Start Daily quotes Engine 🚀",
+                         "Local Notification",
                          "Local Notification with Action",
                          "Local Notification with Content",
                          "Push Notification with  APNs",
@@ -43,6 +44,11 @@ class TableViewController: UITableViewController {
         
         let notificationType = notifications[indexPath.row]
         
+        if (notificationType == "Start Daily quotes Engine 🚀") {
+            self.appDelegate?.scheduleInfiniteNotifications(timePeriod: 60)
+            return
+        }
+        
         if (notificationType == "Cancel Notification") {
             self.appDelegate?.cancelNotification(identifier: "")
             return
@@ -54,7 +60,7 @@ class TableViewController: UITableViewController {
         
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
             
-            self.appDelegate?.scheduleNotification(notificationType: notificationType)
+            self.appDelegate?.scheduleNotification()
         }
         
         alert.addAction(okAction)

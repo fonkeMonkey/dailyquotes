@@ -77,8 +77,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         completionHandler()
     }
+        
+    func scheduleInfiniteNotifications(timePeriod : Int) {
+        NSLog("AppDelegate, Scheduling infinite notifications")
+        //TODO reference cycle probably https://stackoverflow.com/questions/25951980/do-something-every-x-minutes-in-swift
+            Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(scheduleNotification), userInfo: nil, repeats: true)
+
+    }
     
-    func scheduleNotification(notificationType: String) {
+     @objc func scheduleNotification() {
+        NSLog("AppDelegate, Scheduling notification")
         
         let content = UNMutableNotificationContent() // Содержимое уведомления
         let categoryIdentifire = "Delete Notification Type"
@@ -89,11 +97,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         content.badge = 1
         content.categoryIdentifier = categoryIdentifire
         
-        let upperBound = quotes?.count ?? 0
-        let number = Int.random(in: 0 ... upperBound)
-        content.body = quotes?[number] ?? "error parsing file"
+        let upperBound = quotes?.count ?? 1
+        let number = Int.random(in: 0 ... upperBound - 1)
+        content.body = quotes?[number] ?? "error parsing quotes file"
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        //TODO remake not to timer
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
         let identifier = "Local Notification"
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
@@ -114,6 +123,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
         
     func cancelNotification(identifier : String ) {
+        NSLog("AppDelegate, Canceling notification")
         notificationCenter.removePendingNotificationRequests(withIdentifiers: ["Local Notification"])
     }
 

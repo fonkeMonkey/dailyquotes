@@ -26,6 +26,7 @@ class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     }
     
     func scheduleNotification(notificationType: String) {
+        NSLog("Notifications, Scheduling notification")
         
         let content = UNMutableNotificationContent() // Содержимое уведомления
         let userActions = "User Actions"
