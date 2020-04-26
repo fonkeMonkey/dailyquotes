@@ -50,7 +50,7 @@ class TableViewController: UITableViewController {
         }
         
         if (notificationType == "Cancel Notification") {
-            self.appDelegate?.cancelNotification(identifier: "")
+            self.appDelegate?.cancelAndHideNotifications(identifier: "")
             return
         }
         
