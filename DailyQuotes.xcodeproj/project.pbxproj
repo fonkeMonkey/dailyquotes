@@ -10,6 +10,8 @@
 		601B8217243E4A48007F9EEE /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B8216243E4A48007F9EEE /* Notifications.swift */; };
 		601B8219243E4A84007F9EEE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601B8218243E4A84007F9EEE /* TableViewController.swift */; };
 		601B821E243E5213007F9EEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 601B821C243E5213007F9EEE /* Main.storyboard */; };
+		6055C3DE2455B90C0030DD0A /* FileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055C3DD2455B90C0030DD0A /* FileUtils.swift */; };
+		6055C3E02455C3020030DD0A /* quotes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6055C3DF2455C3020030DD0A /* quotes.txt */; };
 		609AFA92243E4310009C8FD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609AFA91243E4310009C8FD6 /* AppDelegate.swift */; };
 		609AFA98243E4312009C8FD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609AFA97243E4312009C8FD6 /* Assets.xcassets */; };
 		609AFA9B243E4312009C8FD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 609AFA9A243E4312009C8FD6 /* Preview Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		601B8216243E4A48007F9EEE /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		601B8218243E4A84007F9EEE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		601B821D243E5213007F9EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6055C3DD2455B90C0030DD0A /* FileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtils.swift; sourceTree = "<group>"; };
+		6055C3DF2455C3020030DD0A /* quotes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = quotes.txt; path = quotes/quotes.txt; sourceTree = "<group>"; };
 		609AFA8E243E4310009C8FD6 /* Daily Quotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily Quotes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		609AFA91243E4310009C8FD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		609AFA97243E4312009C8FD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 				609AFAA7243E4312009C8FD6 /* DailyQuotesTests */,
 				609AFAB2243E4312009C8FD6 /* DailyQuotesUITests */,
 				609AFA8F243E4310009C8FD6 /* Products */,
+				6055C3DF2455C3020030DD0A /* quotes.txt */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,6 +109,7 @@
 				601B821C243E5213007F9EEE /* Main.storyboard */,
 				601B8218243E4A84007F9EEE /* TableViewController.swift */,
 				609AFA91243E4310009C8FD6 /* AppDelegate.swift */,
+				6055C3DD2455B90C0030DD0A /* FileUtils.swift */,
 				609AFA97243E4312009C8FD6 /* Assets.xcassets */,
 				609AFA9C243E4312009C8FD6 /* LaunchScreen.storyboard */,
 				609AFA9F243E4312009C8FD6 /* Info.plist */,
@@ -245,6 +251,7 @@
 			files = (
 				609AFA9E243E4312009C8FD6 /* LaunchScreen.storyboard in Resources */,
 				609AFA9B243E4312009C8FD6 /* Preview Assets.xcassets in Resources */,
+				6055C3E02455C3020030DD0A /* quotes.txt in Resources */,
 				609AFA98243E4312009C8FD6 /* Assets.xcassets in Resources */,
 				601B821E243E5213007F9EEE /* Main.storyboard in Resources */,
 			);
@@ -274,6 +281,7 @@
 				601B8217243E4A48007F9EEE /* Notifications.swift in Sources */,
 				609AFA92243E4310009C8FD6 /* AppDelegate.swift in Sources */,
 				601B8219243E4A84007F9EEE /* TableViewController.swift in Sources */,
+				6055C3DE2455B90C0030DD0A /* FileUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
