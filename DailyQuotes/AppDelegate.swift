@@ -118,6 +118,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         notificationCenter.setNotificationCategories([category])
     }
+        
+    func cancelNotification(identifier : String ) {
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: ["Local Notification"])
+    }
 
 }
 

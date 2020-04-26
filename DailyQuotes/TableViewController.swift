@@ -15,7 +15,9 @@ class TableViewController: UITableViewController {
                          "Local Notification with Content",
                          "Push Notification with  APNs",
                          "Push Notification with Firebase",
-                         "Push Notification with Content"]
+                         "Push Notification with Content",
+                         "Cancel Notification"
+    ]
     
     var appDelegate = UIApplication.shared.delegate as? AppDelegate
 
@@ -40,6 +42,11 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let notificationType = notifications[indexPath.row]
+        
+        if (notificationType == "Cancel Notification") {
+            self.appDelegate?.cancelNotification(identifier: "")
+            return
+        }
         
         let alert = UIAlertController(title: "",
                                       message: "After 5 seconds " + notificationType + " will appear",
