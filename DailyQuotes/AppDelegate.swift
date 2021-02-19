@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let notificationCenter = UNUserNotificationCenter.current()
     
     let quotes = arrayFromContentsOfFileWithName(fileName: "quotes.txt")
+    
+    var timer: Timer? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         notificationCenter.delegate = self
@@ -79,9 +81,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
         
     func scheduleInfiniteNotifications(timePeriodInSeconds : Int) {
+        guard timer == nil else { return }
         NSLog("AppDelegate, Scheduling infinite notifications")
         //TODO reference cycle probably https://stackoverflow.com/questions/25951980/do-something-every-x-minutes-in-swift
-            Timer.scheduledTimer(timeInterval: Double(timePeriodInSeconds), target: self, selector: #selector(scheduleNotification), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: Double(timePeriodInSeconds), target: self, selector: #selector(scheduleNotification), userInfo: nil, repeats: true)
 
     }
     
@@ -126,6 +129,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSLog("AppDelegate, Canceling notification")
         notificationCenter.removePendingNotificationRequests(withIdentifiers: ["Local Notification"])
         notificationCenter.removeDeliveredNotifications(withIdentifiers: ["Local Notification"])
+        
+        timer?.invalidate()
+        timer = nil
     }
 }
 
