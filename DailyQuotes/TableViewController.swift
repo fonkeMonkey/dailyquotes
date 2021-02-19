@@ -45,7 +45,9 @@ class TableViewController: UITableViewController {
         let notificationType = notifications[indexPath.row]
         
         if (notificationType == "Start Daily quotes Engine 🚀") {
-            self.appDelegate?.scheduleInfiniteNotifications(timePeriod: 60)
+            let period = 60 * 60
+            self.appDelegate?.scheduleInfiniteNotifications(timePeriodInSeconds: period)
+            showNotification("Engine started, Every " + String(period) + " seconds a quote will appear!")
             return
         }
         
@@ -54,8 +56,12 @@ class TableViewController: UITableViewController {
             return
         }
         
+        showNotification("After 5 seconds " + notificationType + " will appear")
+    }
+    
+    fileprivate func showNotification(_ notificationType: String) {
         let alert = UIAlertController(title: "",
-                                      message: "After 5 seconds " + notificationType + " will appear",
+                                      message: notificationType,
                                       preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
