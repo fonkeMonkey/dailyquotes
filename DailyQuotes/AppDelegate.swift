@@ -78,10 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         completionHandler()
     }
         
-    func scheduleInfiniteNotifications(timePeriod : Int) {
+    func scheduleInfiniteNotifications(timePeriodInSeconds : Int) {
         NSLog("AppDelegate, Scheduling infinite notifications")
         //TODO reference cycle probably https://stackoverflow.com/questions/25951980/do-something-every-x-minutes-in-swift
-            Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(scheduleNotification), userInfo: nil, repeats: true)
+            Timer.scheduledTimer(timeInterval: Double(timePeriodInSeconds), target: self, selector: #selector(scheduleNotification), userInfo: nil, repeats: true)
 
     }
     
